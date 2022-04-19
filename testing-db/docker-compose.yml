@@ -1,0 +1,14 @@
+---
+services:
+  postgres:
+    container_name: cosc412-testingDB
+    image: postrgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=cosc412password
+      - POSTGRES_DB=testingDB
+    ports:
+      - 127.0.0.1:5432:5432
+    volumes:
+      - ./db-data:/var/lib/postgresql/data
+    restart: never
