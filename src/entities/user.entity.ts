@@ -1,7 +1,14 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  OneToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { Student } from './student.entity';
 
 @Entity('User')
-export abstract class User {
+export class User {
   @PrimaryGeneratedColumn()
   user_id: number;
 
@@ -10,4 +17,8 @@ export abstract class User {
 
   @Column()
   last_name: string;
+
+  @OneToOne(() => Student)
+  @JoinColumn()
+  User: Student;
 }

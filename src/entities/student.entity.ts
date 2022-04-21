@@ -1,8 +1,7 @@
-import { Entity, PrimaryGeneratedColumn } from 'typeorm';
-import { User } from './user.entity';
+import { Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('Student')
-export class Student extends User {
+export class Student {
   @PrimaryGeneratedColumn()
   student_id: number;
 }
