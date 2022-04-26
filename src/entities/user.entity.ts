@@ -1,13 +1,4 @@
-import {
-  Column,
-  Entity,
-  JoinColumn,
-  OneToOne,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
-import { Admin } from './admin.entity';
-import { Instructor } from './instructor.entity';
-import { Student } from './student.entity';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('User')
 export class User {
@@ -19,16 +10,4 @@ export class User {
 
   @Column({ nullable: false })
   last_name: string;
-
-  @OneToOne(() => Student)
-  @JoinColumn()
-  user_stuID: Student;
-
-  @OneToOne(() => Instructor)
-  @JoinColumn()
-  user_instID: Instructor;
-
-  @OneToOne(() => Admin)
-  @JoinColumn()
-  user_admID: Admin;
 }

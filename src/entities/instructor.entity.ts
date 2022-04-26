@@ -1,12 +1,7 @@
-import { Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
-import { Course } from './course.entity';
+import { Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('Instructor')
 export class Instructor {
   @PrimaryGeneratedColumn()
   instructor_id: number;
-
-  @ManyToMany(() => Course)
-  @JoinTable()
-  can_teach: Course[];
 }
