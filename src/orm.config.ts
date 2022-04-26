@@ -10,12 +10,12 @@ const db_user = process.env.POSTGRES_USER || 'postgres';
 const db_password = process.env.POSTGRES_PASSWORD || 'postgres';
 
 export const config: TypeOrmModuleOptions = {
-  type: 'postgres',
-  username: db_user,
-  password: db_password,
-  port: db_port,
-  host: db_host,
-  database: conn_db,
-  synchronize: sync_db,
-  entities: [__dirname + '/**/*.entity{.ts,.js}'],
+    type: 'postgres',
+    username: db_user,
+    password: db_password,
+    port: db_port,
+    host: db_host,
+    database: conn_db,
+    synchronize: sync_db,
+    entities: [__dirname + '/**/*.entity{.ts,.js}'],
 };
