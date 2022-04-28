@@ -1,6 +1,14 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import {
+    Entity,
+    PrimaryGeneratedColumn,
+    Column,
+    ManyToOne,
+    OneToOne,
+    JoinColumn,
+} from 'typeorm';
 import { Semester } from './semester.entity';
 import { Course } from './course.entity';
+import { Instructor } from './instructor.entity';
 
 @Entity('Class')
 export class Class {
@@ -18,4 +26,8 @@ export class Class {
 
     @ManyToOne(() => Course, (course) => course.classes)
     course: Course;
+
+    @OneToOne(() => Instructor, (instructor) => instructor.instructor_id)
+    @JoinColumn()
+    taught_by: Instructor;
 }

@@ -1,5 +1,12 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToOne } from 'typeorm';
+import {
+    Entity,
+    PrimaryGeneratedColumn,
+    OneToOne,
+    OneToMany,
+    JoinColumn,
+} from 'typeorm';
 import { User } from './user.entity';
+import { ClassStatus } from './class_status.entity';
 
 @Entity('Student')
 export class Student {
@@ -8,4 +15,8 @@ export class Student {
 
     @OneToOne(() => User, (user) => user.student_profile)
     user: User;
+
+    @OneToMany(() => ClassStatus, (class_status) => class_status.student)
+    @JoinColumn()
+    class_statuses: ClassStatus[];
 }
