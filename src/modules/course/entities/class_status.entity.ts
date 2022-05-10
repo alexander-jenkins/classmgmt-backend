@@ -7,7 +7,7 @@ import {
     Column,
 } from 'typeorm';
 import { Class } from './class.entity';
-import { Student } from './student.entity';
+import { Student } from '../../user/entities/student.entity';
 
 @Entity('ClassStatus')
 export class ClassStatus {

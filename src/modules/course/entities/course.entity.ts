@@ -6,7 +6,7 @@ import {
     ManyToMany,
 } from 'typeorm';
 import { Class } from './class.entity';
-import { Instructor } from './instructor.entity';
+import { Instructor } from '../../user/entities/instructor.entity';
 
 @Entity('Course')
 export class Course {
