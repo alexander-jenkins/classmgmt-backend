@@ -19,6 +19,12 @@ export class Course {
     @Column({ nullable: true })
     course_description: string;
 
+    @Column({ nullable: false })
+    course_step: number;
+
+    @Column({ nullable: true })
+    course_duration: number; // in weeks
+
     @OneToMany(() => Class, (class_) => class_.course)
     classes: Class[];
 

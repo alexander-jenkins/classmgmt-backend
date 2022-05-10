@@ -8,7 +8,7 @@ import {
 } from 'typeorm';
 import { Semester } from './semester.entity';
 import { Course } from './course.entity';
-import { Instructor } from './instructor.entity';
+import { Instructor } from '../../user/entities/instructor.entity';
 
 @Entity('Class')
 export class Class {
