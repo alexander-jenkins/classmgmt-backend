@@ -1,5 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 import { CourseService } from './course.service';
+import { Course } from './entities/course.entity';
 
 @Controller('course')
 export class CourseController {
@@ -11,7 +12,7 @@ export class CourseController {
     }
 
     @Get('/findAll')
-    findAll(): Promise<string> {
+    async findAll(): Promise<Course[]> {
         return await this.courseService.findAll();
     }
 }
