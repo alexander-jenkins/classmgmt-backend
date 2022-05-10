@@ -36,6 +36,3 @@ lerna-debug.log*
 
 # Environment
 .env
-
-# Tools
-bfg-1.14.0.jar
